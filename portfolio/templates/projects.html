@@ -1,0 +1,223 @@
+{% extends 'base.html' %}
+
+{% block title %}Projects | Joshua Olugbemi - Full-Stack Django Developer{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="pt-32 pb-20 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+        <div class="reveal">
+            <p style="color: var(--accent-primary);" class="text-sm uppercase tracking-widest mb-4 font-medium">My Work</p>
+        </div>
+        <div class="reveal reveal-delay-1">
+            <h1 class="text-5xl md:text-6xl font-display font-bold mb-6" style="color: var(--text-primary);">
+                Projects That <span style="color: var(--accent-primary);" class="glow-text">Deliver</span>
+            </h1>
+        </div>
+        <div class="reveal reveal-delay-2">
+            <p class="text-xl max-w-3xl mx-auto leading-relaxed" style="color: var(--text-secondary);">
+                Real-world applications built with Django, designed to solve problems and create value. Each project showcases my approach to clean architecture and user-centered development.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Grid -->
+<section class="py-20 px-6">
+    <div class="max-w-7xl mx-auto">
+
+        <!-- Featured Projects -->
+        {% if projects %}
+            {% for project in projects %}
+                {% if project.featured %}
+                <div class="mb-20">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="reveal order-2 md:order-1">
+                            <div class="flex items-center mb-4">
+                                <span style="color: var(--accent-primary);" class="font-semibold text-sm uppercase tracking-wider">Featured Project</span>
+                                {% if project.status == 'completed' %}
+                                    <span class="ml-3 px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded-full">Completed</span>
+                                {% elif project.status == 'in_progress' %}
+                                    <span class="ml-3 px-2 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded-full">In Progress</span>
+                                {% else %}
+                                    <span class="ml-3 px-2 py-1 bg-blue-500/20 text-blue-400 text-xs rounded-full">Planned</span>
+                                {% endif %}
+                            </div>
+                            <h2 class="text-3xl md:text-4xl font-display font-bold mb-4" style="color: var(--text-primary);">
+                                {{ project.title }}
+                            </h2>
+                            <p style="color: var(--text-secondary);" class="leading-relaxed mb-6">
+                                {{ project.description }}
+                            </p>
+
+                            <!-- Project Details -->
+                            <div class="grid grid-cols-2 gap-4 mb-6">
+                                <div>
+                                    <h4 class="font-semibold mb-2" style="color: var(--text-primary);">Type</h4>
+                                    <p style="color: var(--text-muted);" class="text-sm">{{ project.get_project_type_display }}</p>
+                                </div>
+                                {% if project.completion_date %}
+                                <div>
+                                    <h4 class="font-semibold mb-2" style="color: var(--text-primary);">Completed</h4>
+                                    <p style="color: var(--text-muted);" class="text-sm">{{ project.completion_date|date:"M Y" }}</p>
+                                </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Technologies -->
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                {% for tech in project.get_tech_list %}
+                                <span class="skill-pill px-4 py-2 rounded-full text-sm font-medium">{{ tech }}</span>
+                                {% endfor %}
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="flex gap-4">
+                                {% if project.demo_url %}
+                                <a href="{{ project.demo_url }}" target="_blank" rel="noopener" class="btn-primary text-white px-6 py-3 rounded-lg font-semibold text-sm">
+                                    View Demo
+                                </a>
+                                {% endif %}
+                                {% if project.github_url %}
+                                <a href="{{ project.github_url }}" target="_blank" rel="noopener" class="btn-outline px-6 py-3 rounded-lg font-semibold text-sm">
+                                    Source Code
+                                </a>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="reveal reveal-delay-1 order-1 md:order-2">
+                            <div class="hover-lift relative rounded-2xl overflow-hidden glow-border" style="border: 1px solid var(--border-color);">
+                                {% if project.image %}
+                                <img src="{{ project.image.url }}" alt="{{ project.title }}" class="w-full h-64 object-cover">
+                                {% else %}
+                                <div class="h-64 flex items-center justify-center" style="background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));">
+                                    <svg class="w-24 h-24 text-white opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                                    </svg>
+                                </div>
+                                {% endif %}
+                                <div class="project-overlay absolute inset-0"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+        <!-- All Projects Grid -->
+        {% if projects %}
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for project in projects %}
+            <div class="hover-lift rounded-2xl overflow-hidden glow-border group" style="background: var(--bg-secondary); border: 1px solid var(--border-color);">
+                <!-- Project Image -->
+                <div class="relative h-48 overflow-hidden">
+                    {% if project.image %}
+                    <img src="{{ project.image.url }}" alt="{{ project.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    {% else %}
+                    <div class="w-full h-full flex items-center justify-center" style="background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));">
+                        <svg class="w-16 h-16 text-white opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                        </svg>
+                    </div>
+                    {% endif %}
+
+                    <!-- Status Badge -->
+                    <div class="absolute top-4 right-4">
+                        {% if project.status == 'completed' %}
+                            <span class="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded-full">Completed</span>
+                        {% elif project.status == 'in_progress' %}
+                            <span class="px-2 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded-full">In Progress</span>
+                        {% else %}
+                            <span class="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs rounded-full">Planned</span>
+                        {% endif %}
+                    </div>
+
+                    <!-- Featured Badge -->
+                    {% if project.featured %}
+                    <div class="absolute top-4 left-4">
+                        <span class="px-2 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded-full">Featured</span>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- Project Content -->
+                <div class="p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-xl font-display font-semibold" style="color: var(--text-primary);">{{ project.title }}</h3>
+                        <span class="text-xs px-2 py-1 rounded" style="background: var(--bg-accent); color: var(--text-muted);">{{ project.get_project_type_display }}</span>
+                    </div>
+
+                    <p style="color: var(--text-muted);" class="text-sm leading-relaxed mb-4 line-clamp-3">
+                        {{ project.short_description }}
+                    </p>
+
+                    <!-- Technologies -->
+                    <div class="flex flex-wrap gap-1 mb-4">
+                        {% for tech in project.get_tech_list|slice:":4" %}
+                        <span class="skill-pill px-2 py-1 rounded text-xs">{{ tech }}</span>
+                        {% endfor %}
+                        {% if project.get_tech_list|length > 4 %}
+                        <span class="text-xs px-2 py-1 rounded" style="color: var(--text-muted);">+{{ project.get_tech_list|length|add:"-4" }} more</span>
+                        {% endif %}
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex gap-2">
+                        {% if project.demo_url %}
+                        <a href="{{ project.demo_url }}" target="_blank" rel="noopener" class="flex-1 text-center btn-primary text-white px-3 py-2 rounded text-sm font-medium">
+                            Demo
+                        </a>
+                        {% endif %}
+                        {% if project.github_url %}
+                        <a href="{{ project.github_url }}" target="_blank" rel="noopener" class="flex-1 text-center btn-outline px-3 py-2 rounded text-sm font-medium">
+                            Code
+                        </a>
+                        {% endif %}
+                    </div>
+
+                    {% if project.completion_date %}
+                    <div class="mt-3 text-xs" style="color: var(--text-muted);">
+                        Completed {{ project.completion_date|date:"M Y" }}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <!-- No Projects Message -->
+        <div class="text-center py-20">
+            <div class="w-24 h-24 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: var(--bg-accent);">
+                <svg class="w-12 h-12" style="color: var(--text-muted);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                </svg>
+            </div>
+            <h3 class="text-2xl font-display font-semibold mb-4" style="color: var(--text-primary);">No Projects Yet</h3>
+            <p style="color: var(--text-muted);" class="max-w-md mx-auto">
+                Projects will appear here once they're added to the admin panel. Check back soon!
+            </p>
+        </div>
+        {% endif %}
+
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+        <div class="p-12 rounded-3xl glow-border" style="background: var(--bg-secondary); border: 2px solid var(--accent-primary);">
+            <h2 class="text-3xl md:text-4xl font-display font-bold mb-4" style="color: var(--text-primary);">
+                Have a Project in <span style="color: var(--accent-primary);">Mind?</span>
+            </h2>
+            <p style="color: var(--text-secondary);" class="text-lg mb-8 max-w-2xl mx-auto">
+                Whether it's a new build, redesign, or enhancement of an existing system, I'd love to hear about your vision and discuss how we can bring it to life.
+            </p>
+            <a href="{% url 'contact' %}" class="btn-primary text-white px-8 py-4 rounded-lg font-semibold text-lg">
+                Start a Project
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,384 @@
+{% extends 'base.html' %}
+
+{% block title %}About | Joshua Olugbemi - Full-Stack Django Developer{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="pt-32 pb-20 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+        <div class="reveal">
+            <p style="color: var(--accent-primary);" class="text-sm uppercase tracking-widest mb-4 font-medium">Get to Know Me</p>
+        </div>
+        <div class="reveal reveal-delay-1">
+            <h1 class="text-5xl md:text-6xl font-display font-bold mb-6" style="color: var(--text-primary);">
+                Crafting Digital <span style="color: var(--accent-primary);" class="glow-text">Experiences</span>
+            </h1>
+        </div>
+        <div class="reveal reveal-delay-2">
+            <p class="text-xl max-w-3xl mx-auto leading-relaxed" style="color: var(--text-secondary);">
+                I'm a full-stack developer who believes great software solves real problems with elegant simplicity.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Bio Section -->
+<section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- Image/Visual Side -->
+            <div class="reveal">
+                <div class="relative">
+                    <div class="aspect-square rounded-2xl overflow-hidden glow-border" style="background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <svg class="w-64 h-64 text-white opacity-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- Floating element -->
+                    <div class="absolute -bottom-6 -right-6 rounded-xl p-6 glow-border" style="background: var(--bg-secondary); border: 1px solid var(--accent-primary);">
+                        <p class="text-3xl font-display font-bold" style="color: var(--accent-primary);">5+</p>
+                        <p style="color: var(--text-muted);" class="text-sm">Years Experience</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bio Content -->
+            <div class="reveal reveal-delay-1">
+                <h2 class="text-3xl md:text-4xl font-display font-bold mb-6" style="color: var(--text-primary);">
+                    Developer. <span style="color: var(--accent-primary);">Instructor.</span> Problem Solver.
+                </h2>
+                <div class="space-y-4 leading-relaxed" style="color: var(--text-secondary);">
+                    <p>
+                        My journey into web development began with a fascination for how technology can transform ideas into impactful solutions. Over the years, I've honed my craft specializing in Django and Python, building everything from e-commerce platforms to content management systems.
+                    </p>
+                    <p>
+                        As a <strong style="color: var(--text-primary);">Web Development Instructor</strong>, I've had the privilege of guiding dozens of students through their coding journeys. There's something incredibly rewarding about breaking down complex concepts and watching someone's confidence grow as they build their first application.
+                    </p>
+                    <p>
+                        My freelance work has taken me across diverse industries—from recreation and hospitality to content publishing. Each project brings unique challenges, and I approach them with a focus on clean architecture, maintainable code, and user-centered design.
+                    </p>
+                    <p>
+                        My background in <strong style="color: var(--text-primary);">Telecommunication Science</strong> gives me an analytical edge when approaching system design and data flow—thinking in terms of signals, networks, and optimal pathways translates beautifully to backend architecture.
+                    </p>
+                    <p>
+                        Currently, I'm expanding my frontend capabilities with React and exploring Kotlin for mobile development, always keeping my toolkit sharp and relevant to modern web development demands.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Philosophy Section -->
+<section class="py-20 px-6" style="background: linear-gradient(to bottom, transparent, var(--bg-secondary));">
+    <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-display font-bold mb-4" style="color: var(--text-primary);">
+                My <span style="color: var(--accent-primary);">Approach</span>
+            </h2>
+            <p style="color: var(--text-muted);" class="text-lg">The principles that guide my development process.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="text-center">
+                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style="background: rgba(59, 130, 246, 0.2);">
+                    <svg class="w-8 h-8" style="color: var(--accent-primary);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-display font-semibold mb-3" style="color: var(--text-primary);">User-First Design</h3>
+                <p style="color: var(--text-muted);" class="leading-relaxed">
+                    Every line of code serves the end user. I prioritize intuitive interfaces and seamless experiences that feel natural and effortless.
+                </p>
+            </div>
+            
+            <div class="text-center">
+                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style="background: rgba(59, 130, 246, 0.2);">
+                    <svg class="w-8 h-8" style="color: var(--accent-primary);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-display font-semibold mb-3" style="color: var(--text-primary);">Clean Architecture</h3>
+                <p style="color: var(--text-muted);" class="leading-relaxed">
+                    Scalable, maintainable code that other developers can understand. I write for clarity today and flexibility tomorrow.
+                </p>
+            </div>
+            
+            <div class="text-center">
+                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style="background: rgba(59, 130, 246, 0.2);">
+                    <svg class="w-8 h-8" style="color: var(--accent-primary);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-display font-semibold mb-3" style="color: var(--text-primary);">Continuous Growth</h3>
+                <p style="color: var(--text-muted);" class="leading-relaxed">
+                    Technology evolves rapidly, and so do I. I stay current with best practices while exploring emerging tools and frameworks.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-display font-bold mb-4" style="color: var(--text-primary);">
+                Technical <span style="color: var(--accent-primary);">Capabilities</span>
+            </h2>
+            <p style="color: var(--text-muted);" class="text-lg">
+                A comprehensive toolkit built through hands-on development and continuous learning.
+            </p>
+        </div>
+        
+        <!-- Frontend Skills -->
+        <div class="mb-12">
+            <div class="flex items-center mb-6">
+                <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-4" style="background: rgba(59, 130, 246, 0.2);">
+                    <svg class="w-6 h-6" style="color: var(--accent-primary);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-display font-semibold" style="color: var(--text-primary);">Frontend Development</h3>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">HTML5</p>
+                    <p style="color: var(--text-muted);" class="text-sm">Semantic markup</p>
+                </div>
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">CSS3</p>
+                    <p style="color: var(--text-muted);" class="text-sm">Modern layouts</p>
+                </div>
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">Tailwind CSS</p>
+                    <p style="color: var(--text-muted);" class="text-sm">Utility-first design</p>
+                </div>
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">JavaScript</p>
+                    <p style="color: var(--text-muted);" class="text-sm">ES6+ features</p>
+                </div>
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">React</p>
+                    <p style="color: var(--text-muted);" class="text-sm">Component-based UI</p>
+                </div>
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">Bootstrap</p>
+                    <p style="color: var(--text-muted);" class="text-sm">Rapid prototyping</p>
+                </div>
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">Responsive Design</p>
+                    <p style="color: var(--text-muted);" class="text-sm">Mobile-first</p>
+                </div>
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">UI/UX Principles</p>
+                    <p style="color: var(--text-muted);" class="text-sm">User-centered</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Backend Skills -->
+        <div class="mb-12">
+            <div class="flex items-center mb-6">
+                <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-4" style="background: rgba(59, 130, 246, 0.2);">
+                    <svg class="w-6 h-6" style="color: var(--accent-primary);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-display font-semibold" style="color: var(--text-primary);">Backend Development</h3>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">Django</p>
+                    <p style="color: var(--text-muted);" class="text-sm">Full-stack framework</p>
+                </div>
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">Python</p>
+                    <p style="color: var(--text-muted);" class="text-sm">Core language</p>
+                </div>
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">REST APIs</p>
+                    <p style="color: var(--text-muted);" class="text-sm">API design</p>
+                </div>
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">Authentication</p>
+                    <p style="color: var(--text-muted);" class="text-sm">Secure systems</p>
+                </div>
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">Django ORM</p>
+                    <p style="color: var(--text-muted);" class="text-sm">Database queries</p>
+                </div>
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">Django REST</p>
+                    <p style="color: var(--text-muted);" class="text-sm">Framework APIs</p>
+                </div>
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">Session Management</p>
+                    <p style="color: var(--text-muted);" class="text-sm">User state</p>
+                </div>
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">Middleware</p>
+                    <p style="color: var(--text-muted);" class="text-sm">Request processing</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Database & Tools -->
+        <div class="mb-12">
+            <div class="flex items-center mb-6">
+                <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-4" style="background: rgba(59, 130, 246, 0.2);">
+                    <svg class="w-6 h-6" style="color: var(--accent-primary);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-display font-semibold" style="color: var(--text-primary);">Databases & Developer Tools</h3>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">PostgreSQL</p>
+                    <p style="color: var(--text-muted);" class="text-sm">Relational DB</p>
+                </div>
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">MySQL</p>
+                    <p style="color: var(--text-muted);" class="text-sm">Database system</p>
+                </div>
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">SQLite</p>
+                    <p style="color: var(--text-muted);" class="text-sm">Lightweight DB</p>
+                </div>
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">Git & GitHub</p>
+                    <p style="color: var(--text-muted);" class="text-sm">Version control</p>
+                </div>
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">VS Code</p>
+                    <p style="color: var(--text-muted);" class="text-sm">IDE</p>
+                </div>
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">Postman</p>
+                    <p style="color: var(--text-muted);" class="text-sm">API testing</p>
+                </div>
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">Linux/Unix</p>
+                    <p style="color: var(--text-muted);" class="text-sm">Server environment</p>
+                </div>
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">Docker</p>
+                    <p style="color: var(--text-muted);" class="text-sm">Containerization</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Expanding Skills -->
+        <div>
+            <div class="flex items-center mb-6">
+                <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-4" style="background: rgba(59, 130, 246, 0.2);">
+                    <svg class="w-6 h-6" style="color: var(--accent-primary);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-display font-semibold" style="color: var(--text-primary);">Expanding Ecosystem</h3>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">React Advanced</p>
+                    <p style="color: var(--text-muted);" class="text-sm">Hooks & Context</p>
+                </div>
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">Kotlin</p>
+                    <p style="color: var(--text-muted);" class="text-sm">Mobile development</p>
+                </div>
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">TypeScript</p>
+                    <p style="color: var(--text-muted);" class="text-sm">Type-safe JS</p>
+                </div>
+                <div class="skill-pill px-6 py-3 rounded-xl text-center">
+                    <p style="color: var(--text-primary);" class="font-semibold mb-1">GraphQL</p>
+                    <p style="color: var(--text-muted);" class="text-sm">API querying</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Experience Timeline -->
+<section class="py-20 px-6" style="background: linear-gradient(to bottom, transparent, var(--bg-secondary));">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-display font-bold mb-4" style="color: var(--text-primary);">
+                Professional <span style="color: var(--accent-primary);">Journey</span>
+            </h2>
+        </div>
+        
+        <div class="space-y-12">
+            <!-- Timeline Item 1 -->
+            <div class="flex gap-6 items-start">
+                <div class="flex-shrink-0">
+                    <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: var(--accent-primary);">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="flex-1 hover-lift p-6 rounded-xl glow-border" style="background: var(--bg-secondary); border: 1px solid var(--border-color);">
+                    <p style="color: var(--accent-primary);" class="text-sm font-semibold mb-2">2020 - Present</p>
+                    <h3 class="text-xl font-display font-semibold mb-2" style="color: var(--text-primary);">Freelance Full-Stack Developer</h3>
+                    <p style="color: var(--text-muted);">Delivering custom web solutions across diverse industries, from e-commerce to content management systems, with a focus on Django and modern frontend frameworks.</p>
+                </div>
+            </div>
+            
+            <!-- Timeline Item 2 -->
+            <div class="flex gap-6 items-start">
+                <div class="flex-shrink-0">
+                    <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: var(--accent-primary);">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="flex-1 hover-lift p-6 rounded-xl glow-border" style="background: var(--bg-secondary); border: 1px solid var(--border-color);">
+                    <p style="color: var(--accent-primary);" class="text-sm font-semibold mb-2">2021 - Present</p>
+                    <h3 class="text-xl font-display font-semibold mb-2" style="color: var(--text-primary);">Web Development Instructor</h3>
+                    <p style="color: var(--text-muted);">Teaching aspiring developers the fundamentals of Python, Django, and full-stack development through hands-on, project-based curriculum.</p>
+                </div>
+            </div>
+            
+            <!-- Timeline Item 3 -->
+            <div class="flex gap-6 items-start">
+                <div class="flex-shrink-0">
+                    <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: var(--accent-primary);">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="flex-1 hover-lift p-6 rounded-xl glow-border" style="background: var(--bg-secondary); border: 1px solid var(--border-color);">
+                    <p style="color: var(--accent-primary);" class="text-sm font-semibold mb-2">2021 - Present</p>
+                    <h3 class="text-xl font-display font-semibold mb-2" style="color: var(--text-primary);">Telecommunication Science Student</h3>
+                    <p style="color: var(--text-muted);">Pursuing final year studies, applying analytical and systems-thinking skills from telecommunications to software architecture and network-based applications.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+        <div class="p-12 rounded-3xl glow-border" style="background: var(--bg-secondary); border: 2px solid var(--accent-primary);">
+            <h2 class="text-3xl md:text-4xl font-display font-bold mb-4" style="color: var(--text-primary);">
+                Ready to <span style="color: var(--accent-primary);">Collaborate?</span>
+            </h2>
+            <p style="color: var(--text-secondary);" class="text-lg mb-8">
+                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+            </p>
+            <a href="{% url 'contact' %}" class="inline-block btn-primary text-white px-8 py-4 rounded-lg font-semibold text-lg">
+                Let's Connect
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
