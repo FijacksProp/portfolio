@@ -1,4 +1,6 @@
 from django.db import models
+# from django.utils.text import slugify
+from cloudinary.models import CloudinaryField
 
 class Contact(models.Model):
     """Model for storing contact form submissions"""
@@ -37,7 +39,7 @@ class Project(models.Model):
     technologies = models.CharField(max_length=500)  # Comma-separated
     project_type = models.CharField(max_length=20, choices=PROJECT_TYPE_CHOICES, default='web_app')
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='completed')
-    image = models.ImageField(upload_to='projects/', blank=True, null=True)
+    image = CloudinaryField('image', help_text="Project image")
     demo_url = models.URLField(blank=True, null=True)
     github_url = models.URLField(blank=True, null=True)
     featured = models.BooleanField(default=False)
