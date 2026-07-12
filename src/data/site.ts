@@ -1,0 +1,76 @@
+export const siteConfig = {
+  name: "Joshua Olugbemi",
+  shortName: "Joshua",
+  role: "Full-stack software engineer",
+  location: "Nigeria",
+  email: "fijacksprop@gmail.com",
+  description:
+    "Full-stack software engineer owning product interfaces, backend services, data, and deployment, with a Telecommunication Science background in signal-aware systems.",
+  statement:
+    "I design and ship full-stack systems—from product interfaces and APIs to deployment and real-world signals.",
+  resumeUrl: "/joshua-olugbemi-resume.pdf",
+  socials: {
+    github: "https://github.com/FijacksProp",
+    linkedin: "https://www.linkedin.com/in/joshua-olugbemi-624760281",
+    x: "https://x.com/fijacksprop",
+  },
+} as const;
+
+export const getSiteUrl = () =>
+  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+
+export const navigation = [
+  { href: "/", label: "Index" },
+  { href: "/work", label: "Work" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+] as const;
+
+export const capabilities = [
+  {
+    discipline: "Interfaces",
+    detail: "Responsive product surfaces with clear interaction and content structure.",
+    tools: "React · TypeScript · Next.js · Tailwind CSS",
+  },
+  {
+    discipline: "Backend",
+    detail: "Authentication, APIs, business rules, and validation that hold up beyond the UI.",
+    tools: "Python · Django · DRF · FastAPI",
+  },
+  {
+    discipline: "Data",
+    detail: "Relational models, persistence, reporting, and careful data boundaries.",
+    tools: "PostgreSQL · SQLite · MySQL · Supabase",
+  },
+  {
+    discipline: "Deployment",
+    detail: "Practical delivery from repository to a production-ready public service.",
+    tools: "Vercel · Render · Netlify · GitHub",
+  },
+  {
+    discipline: "Signal systems",
+    detail: "Software that connects real-world proximity signals to verifiable outcomes.",
+    tools: "BLE · Acoustic beaconing · Kotlin · Flutter",
+  },
+] as const;
+
+export const timeline = [
+  {
+    year: "2021—Now",
+    title: "Independent full-stack software engineer",
+    description:
+      "Building client websites, web applications, dashboards, product prototypes, APIs, and deployment workflows.",
+  },
+  {
+    year: "2022—2026",
+    title: "B.Sc. Telecommunication Science",
+    description:
+      "University of Ilorin. Final-year work explores attendance verification through BLE and acoustic proximity signals.",
+  },
+  {
+    year: "2024—Now",
+    title: "Web development instructor",
+    description:
+      "Teaching practical frontend and backend development; invited as a guest web design instructor for Tech Summit in November 2024.",
+  },
+] as const;
