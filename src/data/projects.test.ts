@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { archiveProjects, projects } from "@/data/projects";
-import { navigation, siteConfig } from "@/data/site";
+import { getSiteUrl, navigation, siteConfig } from "@/data/site";
 
 describe("portfolio content model", () => {
   it("has unique, URL-safe featured project slugs", () => {
@@ -40,5 +40,34 @@ describe("portfolio content model", () => {
   it("exposes phone information only through the resume asset", () => {
     expect(JSON.stringify({ projects, archiveProjects, siteConfig })).not.toMatch(/\+234|0901|901 419/);
     expect(siteConfig.resumeUrl).toMatch(/\.pdf$/);
+  });
+
+  it("resolves canonical URLs across local and Vercel environments", () => {
+    const previousSiteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+    const previousProductionUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+    const previousDeploymentUrl = process.env.VERCEL_URL;
+
+    try {
+      delete process.env.NEXT_PUBLIC_SITE_URL;
+      delete process.env.VERCEL_PROJECT_PRODUCTION_URL;
+      delete process.env.VERCEL_URL;
+      expect(getSiteUrl()).toBe("http://localhost:3000");
+
+      process.env.VERCEL_URL = "portfolio-preview.vercel.app";
+      expect(getSiteUrl()).toBe("https://portfolio-preview.vercel.app");
+
+      process.env.VERCEL_PROJECT_PRODUCTION_URL = "portfolio.vercel.app/";
+      expect(getSiteUrl()).toBe("https://portfolio.vercel.app");
+
+      process.env.NEXT_PUBLIC_SITE_URL = "https://joshuafijacks.dev/";
+      expect(getSiteUrl()).toBe("https://joshuafijacks.dev");
+    } finally {
+      if (previousSiteUrl === undefined) delete process.env.NEXT_PUBLIC_SITE_URL;
+      else process.env.NEXT_PUBLIC_SITE_URL = previousSiteUrl;
+      if (previousProductionUrl === undefined) delete process.env.VERCEL_PROJECT_PRODUCTION_URL;
+      else process.env.VERCEL_PROJECT_PRODUCTION_URL = previousProductionUrl;
+      if (previousDeploymentUrl === undefined) delete process.env.VERCEL_URL;
+      else process.env.VERCEL_URL = previousDeploymentUrl;
+    }
   });
 });

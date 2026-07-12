@@ -17,6 +17,7 @@
 .DS_Store
 *.pem
 .env*
+!.env.example
 /.agents/
 /fijacksprop_logo.png
 /Joshua_Olugbemi_Modern_Resume.pdf

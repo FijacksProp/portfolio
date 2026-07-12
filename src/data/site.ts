@@ -16,8 +16,18 @@ export const siteConfig = {
   },
 } as const;
 
+const normalizeSiteUrl = (value: string) => {
+  const url = /^https?:\/\//i.test(value) ? value : `https://${value}`;
+  return url.replace(/\/+$/, "");
+};
+
 export const getSiteUrl = () =>
-  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  normalizeSiteUrl(
+    process.env.NEXT_PUBLIC_SITE_URL ??
+      process.env.VERCEL_PROJECT_PRODUCTION_URL ??
+      process.env.VERCEL_URL ??
+      "http://localhost:3000",
+  );
 
 export const navigation = [
   { href: "/", label: "Index" },
