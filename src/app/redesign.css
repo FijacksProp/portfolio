@@ -18,9 +18,280 @@
 }
 
 body {
+  position: relative;
+  isolation: isolate;
   background: var(--paper);
   font-family: var(--font-sans);
   font-weight: 470;
+}
+
+/* Living systems map -------------------------------------------------------
+   A single technical drawing follows the visitor between pages. Its routes
+   are deliberately quiet through the reading column and clearer at the
+   viewport edges, so it adds depth without becoming part of the content. */
+
+.living-systems-background {
+  --systems-pointer-x: 82vw;
+  --systems-pointer-y: 28vh;
+  position: fixed;
+  z-index: 20;
+  inset: var(--header-height) 0 0;
+  overflow: hidden;
+  pointer-events: none;
+  contain: strict;
+  opacity: 0.78;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.96) 0%,
+    rgba(0, 0, 0, 0.7) 16%,
+    rgba(0, 0, 0, 0.3) 38%,
+    rgba(0, 0, 0, 0.24) 62%,
+    rgba(0, 0, 0, 0.7) 84%,
+    rgba(0, 0, 0, 0.96) 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.96) 0%,
+    rgba(0, 0, 0, 0.7) 16%,
+    rgba(0, 0, 0, 0.3) 38%,
+    rgba(0, 0, 0, 0.24) 62%,
+    rgba(0, 0, 0, 0.7) 84%,
+    rgba(0, 0, 0, 0.96) 100%
+  );
+}
+
+/* Page-shell surfaces remain below the map; their authored content is lifted
+   above it. This keeps every trace behind copy, controls, and diagrams. */
+.page-shell > :not(.hero-grid-glow) {
+  position: relative;
+  z-index: 21;
+}
+
+.systems-map,
+.systems-map-proximity,
+.systems-map-proximity svg,
+.systems-grid,
+.systems-vignette {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.systems-map {
+  max-width: none;
+}
+
+.systems-map-base {
+  animation: systems-map-enter 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.systems-grid {
+  opacity: 0.42;
+  background-image:
+    linear-gradient(rgba(46, 123, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46, 123, 255, 0.055) 1px, transparent 1px);
+  background-size: 96px 96px;
+  -webkit-mask-image: radial-gradient(circle at 50% 48%, transparent 10%, #000 82%);
+  mask-image: radial-gradient(circle at 50% 48%, transparent 10%, #000 82%);
+}
+
+.systems-route {
+  fill: none;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.systems-route-primary {
+  stroke: rgba(46, 123, 255, 0.34);
+}
+
+.systems-route-secondary {
+  stroke: rgba(84, 101, 113, 0.25);
+}
+
+.systems-route-sand {
+  stroke: rgba(233, 201, 121, 0.34);
+}
+
+.systems-route-dashed {
+  stroke-dasharray: 3 9;
+}
+
+.systems-node-core,
+.systems-node-orbit {
+  vector-effect: non-scaling-stroke;
+}
+
+.systems-node-core {
+  fill: var(--paper);
+  stroke: rgba(84, 101, 113, 0.68);
+  stroke-width: 1.25;
+}
+
+.systems-node-orbit {
+  fill: none;
+  stroke: rgba(84, 101, 113, 0.28);
+  stroke-dasharray: 2 4;
+  stroke-width: 1;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: systems-orbit 18s linear infinite;
+}
+
+.systems-node-primary .systems-node-core {
+  stroke: rgba(46, 123, 255, 0.9);
+}
+
+.systems-node-primary .systems-node-orbit {
+  stroke: rgba(46, 123, 255, 0.46);
+}
+
+.systems-node-sand .systems-node-core {
+  stroke: rgba(233, 201, 121, 0.9);
+}
+
+.systems-node-sand .systems-node-orbit {
+  stroke: rgba(233, 201, 121, 0.48);
+}
+
+.systems-signal {
+  filter: drop-shadow(0 0 5px currentColor);
+}
+
+.systems-signal-blue {
+  color: var(--cobalt);
+  fill: var(--cobalt);
+}
+
+.systems-signal-lime {
+  color: var(--signal);
+  fill: var(--signal);
+}
+
+.systems-signal-sand {
+  color: var(--sand);
+  fill: var(--sand);
+}
+
+.systems-map-proximity {
+  opacity: 0;
+  transition: opacity 500ms ease;
+  -webkit-mask-image: radial-gradient(
+    240px circle at var(--systems-pointer-x) var(--systems-pointer-y),
+    #000 0%,
+    rgba(0, 0, 0, 0.8) 36%,
+    transparent 78%
+  );
+  mask-image: radial-gradient(
+    240px circle at var(--systems-pointer-x) var(--systems-pointer-y),
+    #000 0%,
+    rgba(0, 0, 0, 0.8) 36%,
+    transparent 78%
+  );
+}
+
+.living-systems-background[data-engaged="true"] .systems-map-proximity {
+  opacity: 0.72;
+}
+
+.systems-map-proximity .systems-route {
+  stroke-width: 1.35;
+}
+
+.systems-map-proximity .systems-route-primary {
+  stroke: rgba(46, 123, 255, 0.72);
+}
+
+.systems-map-proximity .systems-route-secondary {
+  stroke: rgba(128, 145, 156, 0.48);
+}
+
+.systems-map-proximity .systems-route-sand {
+  stroke: rgba(233, 201, 121, 0.68);
+}
+
+.systems-map-proximity .systems-node-core {
+  fill: rgba(255, 254, 249, 0.9);
+}
+
+.systems-vignette {
+  background:
+    linear-gradient(90deg, transparent 0 8%, rgba(245, 242, 235, 0.025) 26% 74%, transparent 92%),
+    linear-gradient(180deg, rgba(6, 21, 34, 0.08), transparent 14% 86%, rgba(6, 21, 34, 0.08));
+}
+
+@keyframes systems-orbit {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes systems-map-enter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 1023px), (pointer: coarse) {
+  .living-systems-background {
+    opacity: 0.64;
+  }
+
+  .systems-map-proximity {
+    display: none;
+  }
+
+  .systems-grid {
+    background-size: 80px 80px;
+  }
+}
+
+@media (max-width: 639px) {
+  .living-systems-background {
+    opacity: 0.54;
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.92),
+      rgba(0, 0, 0, 0.32) 34% 66%,
+      rgba(0, 0, 0, 0.92)
+    );
+    mask-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.92),
+      rgba(0, 0, 0, 0.32) 34% 66%,
+      rgba(0, 0, 0, 0.92)
+    );
+  }
+
+  .systems-grid {
+    opacity: 0.28;
+    background-size: 64px 64px;
+  }
+
+  .systems-route:nth-child(n + 8),
+  .systems-node:nth-child(n + 7),
+  .systems-signal:nth-child(n + 3) {
+    display: none;
+  }
+
+  .systems-route {
+    stroke-width: 0.85;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .living-systems-background {
+    opacity: 0.5;
+  }
+
+  .systems-signals,
+  .systems-map-proximity {
+    display: none;
+  }
+
+  .systems-node-orbit {
+    animation: none;
+  }
 }
 
 h1,

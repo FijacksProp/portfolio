@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { LivingSystemsBackground } from "@/components/living-systems-background";
 import { MotionProvider } from "@/components/motion-provider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -80,6 +81,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           Skip to content
         </a>
         <MotionProvider>
+          <LivingSystemsBackground />
           <SiteHeader />
           <main id="main-content">{children}</main>
           <SiteFooter />

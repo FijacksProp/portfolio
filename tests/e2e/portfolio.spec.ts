@@ -84,6 +84,35 @@ test("landing hero presents the full software practice without overflow", async 
   await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1)).toBe(true);
 });
 
+test("living systems map follows each page context", async ({ page, isMobile }) => {
+  test.skip(isMobile, "route composition is shared across breakpoints");
+
+  const contexts = [
+    ["/", "home"],
+    ["/work", "work"],
+    ["/work/smart-attendance-system", "case"],
+    ["/work/courtesychain", "courtesy"],
+    ["/work/mt5-trade-radar", "radar"],
+    ["/about", "about"],
+    ["/contact", "contact"],
+  ] as const;
+
+  for (const [route, variant] of contexts) {
+    await page.goto(route);
+    const background = page.locator(".living-systems-background");
+    await expect(background).toHaveAttribute("aria-hidden", "true");
+    await expect(background).toHaveAttribute("data-variant", variant);
+    await expect(background).toHaveCSS("pointer-events", "none");
+  }
+});
+
+test("living systems motion respects the visitor's reduced-motion setting", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("/");
+  await expect(page.locator(".systems-signals")).toHaveCSS("display", "none");
+  await expect(page.locator(".systems-map-proximity")).toHaveCSS("display", "none");
+});
+
 test("mobile navigation exposes state and closes with Escape", async ({ page, isMobile }) => {
   test.skip(!isMobile, "mobile-only interaction");
   await page.goto("/");
