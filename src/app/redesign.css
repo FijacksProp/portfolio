@@ -2983,6 +2983,20 @@ h3,
   .contact-page::before { width: 330px; height: 280px; right: -90px; top: 16%; }
 }
 
+@media (max-width: 639px) {
+  .site-header .brand-copy {
+    display: grid;
+  }
+
+  .site-header .brand-copy small {
+    display: block;
+    margin-top: 3px;
+    font-size: 0.48rem;
+    letter-spacing: 0.025em;
+    white-space: nowrap;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .atlas-traces path,
   .atlas-traces circle,

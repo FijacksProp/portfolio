@@ -137,6 +137,7 @@ test("opening ident is branded, brief, and non-blocking after its reveal", async
 test("mobile navigation exposes state and closes with Escape", async ({ page, isMobile }) => {
   test.skip(!isMobile, "mobile-only interaction");
   await page.goto("/");
+  await expect(page.locator(".site-header .brand-copy small")).toBeVisible();
   const menu = page.getByRole("button", { name: "Menu" });
   await expect(menu).toHaveAttribute("aria-expanded", "false");
   await menu.click();
