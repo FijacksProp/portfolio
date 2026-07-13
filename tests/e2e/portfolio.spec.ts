@@ -113,6 +113,27 @@ test("living systems motion respects the visitor's reduced-motion setting", asyn
   await expect(page.locator(".systems-map-proximity")).toHaveCSS("display", "none");
 });
 
+test("opening ident is branded, brief, and non-blocking after its reveal", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.goto("/");
+  const preloader = page.locator(".site-preloader");
+  await expect(preloader).toHaveCount(1);
+  await expect(preloader.getByText("Joshua Olugbemi")).toBeVisible();
+  const logo = preloader.locator(".preloader-mark-plate img");
+  await expect(logo).toBeVisible();
+  await expect.poll(() => logo.evaluate((image) => {
+    const imageBox = image.getBoundingClientRect();
+    const plateBox = image.parentElement?.getBoundingClientRect();
+    if (!plateBox) return false;
+    return imageBox.left >= plateBox.left - 1
+      && imageBox.right <= plateBox.right + 1
+      && imageBox.top >= plateBox.top - 1
+      && imageBox.bottom <= plateBox.bottom + 1;
+  })).toBe(true);
+  await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1)).toBe(true);
+  await expect(preloader).toHaveCount(0, { timeout: 5_500 });
+});
+
 test("mobile navigation exposes state and closes with Escape", async ({ page, isMobile }) => {
   test.skip(!isMobile, "mobile-only interaction");
   await page.goto("/");
