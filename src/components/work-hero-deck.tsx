@@ -4,20 +4,20 @@ import { useState } from "react";
 
 const cards = [
   {
-    id: "backend",
-    number: "01",
-    eyebrow: "Python backend",
-    title: <>Rules, data<br />&amp; reliable APIs.</>,
-    detail: "Python · Django · DRF",
-    className: "work-stack-dark",
-  },
-  {
     id: "product",
-    number: "02",
+    number: "01",
     eyebrow: "Product engineering",
     title: <>Interfaces<br />people understand.</>,
     detail: "React · Next.js · TypeScript",
     className: "work-stack-blue",
+  },
+  {
+    id: "backend",
+    number: "02",
+    eyebrow: "Backend systems",
+    title: <>Rules, services<br />&amp; reliable APIs.</>,
+    detail: "Django · FastAPI · PostgreSQL",
+    className: "work-stack-dark",
   },
   {
     id: "delivery",

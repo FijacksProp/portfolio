@@ -9,7 +9,7 @@ import { archiveProjects, projects } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Selected work",
   description:
-    "Full-stack case studies in backend validation, responsive web delivery, and risk-aware data tooling.",
+    "Full-stack case studies spanning product interfaces, backend validation, mobile workflows, and risk-aware data tooling.",
   alternates: { canonical: "/work" },
 };
 
@@ -21,8 +21,8 @@ export default function WorkPage() {
         <Reveal className="work-title">
           <h1>Selected products</h1>
           <p>
-            Three products selected for the full-stack decisions they expose: backend trust,
-            responsive product delivery, and risk-aware data analysis.
+            Three products selected for the decisions they expose across product experience,
+            backend trust, mobile workflows, and risk-aware analysis.
           </p>
         </Reveal>
         <div className="work-folio" aria-hidden="true">01—03</div>

@@ -6,7 +6,7 @@ import { capabilities, siteConfig, timeline } from "@/data/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Joshua Olugbemi is a Python and Django-focused full-stack software engineer, React developer, and web development instructor.",
+    "Joshua Olugbemi is a full-stack software engineer and web development instructor working across product interfaces, backend systems, data, mobile software, and delivery.",
   alternates: { canonical: "/about" },
 };
 
@@ -22,21 +22,22 @@ export default function AboutPage() {
         </Reveal>
         <Reveal className="about-intro" delay={0.05}>
           <p>
-            I’m Joshua, a full-stack software engineer focused on Python and Django backend
-            systems and polished React and Next.js interfaces. I design API contracts,
-            authentication, business rules, relational data, and the product experiences built on them.
+            I’m Joshua, a full-stack software engineer working across product interfaces,
+            backend services, relational data, mobile workflows, and deployment. I move between
+            architecture and implementation, choosing tools around the product instead of forcing
+            every problem into one stack.
           </p>
           <p>
-            My Telecommunication Science background gives me an additional systems perspective
-            when software meets identity, proximity, devices, or physical constraints. Since 2021,
-            I’ve owned delivery across client platforms, product prototypes, dashboards, APIs,
-            and academic systems. Teaching web development since 2024 has sharpened how I
-            communicate architecture and make systems legible to other engineers.
+            For backend work I often reach for Python and Django; for interfaces I work with
+            React, Next.js, and TypeScript, with Flutter and native Android where a product extends
+            into mobile or device-aware systems. My Telecommunication Science background adds
+            another perspective when software meets physical constraints. Since 2021, I’ve owned
+            delivery across client platforms, product prototypes, dashboards, APIs, and academic systems.
           </p>
         </Reveal>
         <blockquote className="about-quote">
-          My method: model the product rule clearly, encode it in the backend, then carry
-          it through the interface, data, and release.
+          My method: understand the product, make the architecture legible, then carry each
+          decision through interface, service, data, and release.
         </blockquote>
       </header>
 

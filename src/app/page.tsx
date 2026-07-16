@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 };
 
 const engineeringIndex = [
-  { number: "01", label: "Python backend systems", tools: "Django / DRF / FastAPI" },
-  { number: "02", label: "Product interfaces", tools: "React / Next.js / TypeScript" },
-  { number: "03", label: "Data + delivery", tools: "PostgreSQL / Git / Cloud" },
-  { number: "04", label: "Device-aware software", tools: "Flutter / Kotlin / BLE" },
+  { number: "01", label: "Product interfaces", tools: "React / Next.js / TypeScript" },
+  { number: "02", label: "Backend systems", tools: "Django / FastAPI / REST" },
+  { number: "03", label: "Data + integration", tools: "PostgreSQL / APIs / Services" },
+  { number: "04", label: "Mobile + delivery", tools: "Flutter / Kotlin / Git / Cloud" },
 ] as const;
 
 export default function HomePage() {
@@ -24,20 +24,19 @@ export default function HomePage() {
       <section className="home-hero home-hero-v2 page-shell">
         <div className="hero-grid-glow" aria-hidden="true" />
         <div className="hero-folio folio-label">
-          <span>Full-stack engineering / Python · Product · Delivery</span>
+          <span>Software engineering / Web · Mobile · Platforms</span>
           <span>Nigeria / UTC+1</span>
         </div>
         <Reveal className="hero-statement">
           <h1>
             <span>I design &amp; ship</span>
-            <span>full-stack products:</span>
-            <span>Python, Django,</span>
-            <span>&amp; thoughtful <em>interfaces.</em></span>
+            <span>complete products:</span>
+            <span>interface, logic,</span>
+            <span>data &amp; <em>delivery.</em></span>
           </h1>
           <p>
-            I own the path from product decisions and responsive interfaces to Django APIs,
-            PostgreSQL data models, testing, and deployment. My telecommunications background
-            adds an edge when software meets devices or physical systems.
+            I work across product decisions, responsive interfaces, backend services, data,
+            mobile workflows, and deployment—choosing the tools and architecture that fit the work.
           </p>
           <div className="hero-actions">
             <ArrowLink href="/work" className="arrow-link-primary">
@@ -88,7 +87,7 @@ export default function HomePage() {
         <SectionHeading
             number="02"
             label="Engineering range"
-            title="One practice across backend systems, interfaces, data, and delivery."
+            title="One practice across product, interface, backend, data, and delivery."
         />
         <div className="capability-ledger">
           {capabilities.map((capability, index) => (

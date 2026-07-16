@@ -42,10 +42,10 @@ export const projects: Project[] = [
     year: "2026",
     role: "Full-stack product engineer · Final-year project",
     status: "academic",
-    eyebrow: "Django REST platform / Flutter + Android",
+    eyebrow: "Full-stack platform / Mobile + backend",
     cta: "Explore the full-stack architecture",
     summary:
-      "A Django REST and Flutter attendance platform coordinating session workflows, device-aware proof, server-side trust rules, reporting, and CSV export.",
+      "A Flutter mobile and Django REST attendance platform coordinating session workflows, device-aware proof, server-side trust rules, reporting, and CSV export.",
     premise:
       "Attendance proof should be layered, short-lived, and validated by the server—not trusted simply because a phone says it was present.",
     context: [

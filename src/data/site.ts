@@ -5,9 +5,9 @@ export const siteConfig = {
   location: "Nigeria",
   email: "fijacksprop@gmail.com",
   description:
-    "Full-stack software engineer building web products with Python, Django, React, TypeScript, and PostgreSQL—from API and data modelling to polished interfaces and deployment.",
+    "Full-stack software engineer designing and delivering web platforms, APIs, mobile experiences, data systems, and production-ready products.",
   statement:
-    "I build dependable full-stack products with Python, Django, React, and PostgreSQL—from backend rules to the interface people use.",
+    "I build dependable software across product interfaces, backend services, data, mobile workflows, and delivery.",
   resumeUrl: "/joshua-olugbemi-resume.pdf",
   socials: {
     github: "https://github.com/FijacksProp",
@@ -38,23 +38,23 @@ export const navigation = [
 
 export const capabilities = [
   {
-    discipline: "Python backend systems",
-    detail: "Django services that turn product rules into secure APIs, workflows, authentication, and validation.",
-    tools: "Python · Django · DRF · FastAPI",
-  },
-  {
     discipline: "Product interfaces",
     detail: "Responsive product surfaces with clear interaction, content structure, and maintainable components.",
     tools: "React · TypeScript · Next.js · Tailwind CSS",
   },
   {
-    discipline: "Data",
-    detail: "Relational models, persistence, reporting, and careful data boundaries.",
-    tools: "PostgreSQL · SQLite · MySQL · Supabase",
+    discipline: "Backend systems",
+    detail: "APIs, authentication, business rules, and service architecture that hold up beyond the interface.",
+    tools: "Python · Django · DRF · FastAPI",
   },
   {
-    discipline: "Deployment",
-    detail: "Practical delivery from repository to a production-ready public service.",
+    discipline: "Data + integration",
+    detail: "Relational models, persistence, reporting, and integrations across product boundaries.",
+    tools: "PostgreSQL · SQLite · MySQL · REST APIs",
+  },
+  {
+    discipline: "Delivery",
+    detail: "Practical ownership from repository and testing through deployment and production readiness.",
     tools: "Vercel · Render · Netlify · GitHub",
   },
   {

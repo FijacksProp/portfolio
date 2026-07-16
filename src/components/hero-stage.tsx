@@ -38,9 +38,9 @@ const atlasNodes: AtlasNode[] = [
     branch: "backend",
     className: "atlas-backend",
     index: "02",
-    discipline: "Backend",
-    title: "Django API",
-    tools: "Python · DRF · FastAPI",
+    discipline: "Services",
+    title: "Application services",
+    tools: "Django · FastAPI · REST",
     artifact: "contract / auth / validation",
     route: "M498 156 V204 H396",
   },
@@ -84,9 +84,9 @@ const routeEndpoints = [
 ] as const;
 
 const branchNames: Record<AtlasBranch, string> = {
-  all: "the complete full-stack system",
+  all: "the complete product architecture",
   interface: "the product interface layer",
-  backend: "the Python and Django API layer",
+  backend: "the application services layer",
   logic: "the domain logic layer",
   data: "the data systems layer",
   delivery: "the delivery layer",
@@ -172,7 +172,7 @@ export function HeroStage() {
       className="hero-stage"
       data-active={activeBranch}
       data-ready={ready || Boolean(reduceMotion)}
-      aria-label="Interactive full-stack product architecture centered on Joshua's Python and Django practice"
+      aria-label="Interactive full-stack product architecture showing Joshua's connected engineering practice"
       style={reduceMotion ? undefined : { y: stageY, scale: stageScale }}
     >
       <motion.div
@@ -190,7 +190,7 @@ export function HeroStage() {
       >
         <div className="hero-stage-label">
           <span>Full-stack product architecture</span>
-          <strong>Python / Django first</strong>
+          <strong>05 connected layers</strong>
         </div>
 
         <div className="developer-atlas">
@@ -207,7 +207,7 @@ export function HeroStage() {
           />
           <div className="atlas-heading">
             <span>System map / 001</span>
-            <strong>A Django-led stack from product decision to production.</strong>
+            <strong>One product. Every engineering layer working together.</strong>
           </div>
 
           <svg className="atlas-traces" viewBox="0 0 640 500" aria-hidden="true">
@@ -294,7 +294,7 @@ export function HeroStage() {
             className="atlas-core"
             data-active={activeBranch === "all"}
             aria-pressed={selectedBranch === "all"}
-            aria-label="Inspect the complete Python and Django full-stack system"
+            aria-label="Inspect the complete product architecture"
             onClick={() => setSelectedBranch("all")}
             onPointerEnter={() => setHoveredBranch("all")}
             onPointerLeave={() => setHoveredBranch(null)}
@@ -308,18 +308,18 @@ export function HeroStage() {
               transition={{ duration: reduceMotion ? 0 : 0.58, delay: 0.04, ease: [0.22, 1, 0.36, 1] }}
             >
               <span className="atlas-core-surface">
-                <span>Primary stack</span>
-                <strong>Python<br /><em>/ Django.</em></strong>
-                <span className="atlas-core-method">model <i /> build <i /> validate</span>
+                <span>Engineering practice</span>
+                <strong>Full-stack<br /><em>/ ownership.</em></strong>
+                <span className="atlas-core-method">shape <i /> build <i /> ship</span>
               </span>
             </motion.span>
           </button>
         </div>
 
         <figcaption className="hero-stage-foot">
-          <span>Python</span>
-          <span>Django</span>
+          <span>Product</span>
           <span>Interfaces</span>
+          <span>Services</span>
           <span>Data</span>
           <span>Delivery</span>
         </figcaption>

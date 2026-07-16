@@ -35,10 +35,10 @@ test("primary navigation and case-study routes are connected", async ({ page }) 
 test("work hero deck exposes and selects each engineering layer", async ({ page }) => {
   await page.goto("/work");
 
-  const backendCard = page.getByRole("button", { name: /Python backend/ });
-  await expect(backendCard).toBeVisible();
-  await backendCard.click();
-  await expect(backendCard).toHaveAttribute("aria-pressed", "true");
+  const productCard = page.getByRole("button", { name: /Product engineering/ });
+  await expect(productCard).toBeVisible();
+  await productCard.click();
+  await expect(productCard).toHaveAttribute("aria-pressed", "true");
 });
 
 test("resume and contact actions resolve", async ({ page, request }) => {
@@ -78,19 +78,19 @@ test("landing hero presents the full software practice without overflow", async 
   const atlas = page.getByRole("figure", { name: /Interactive full-stack product architecture/ });
   await expect(atlas).toBeVisible();
   await expect(atlas.getByText("Product interface")).toBeVisible();
-  await expect(atlas.getByText("Django API")).toBeVisible();
+  await expect(atlas.getByText("Application services")).toBeVisible();
   await expect(atlas.getByText("Domain logic")).toBeVisible();
   await expect(atlas.getByText("Data systems")).toBeVisible();
   await expect(atlas.getByRole("button", { name: "Inspect the delivery layer" })).toBeVisible();
   await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1)).toBe(true);
 });
 
-test("desktop atlas reveals and selects the Python backend layer", async ({ page, isMobile }) => {
+test("desktop atlas reveals and selects the application services layer", async ({ page, isMobile }) => {
   test.skip(isMobile, "desktop hover and keyboard interaction");
   await page.goto("/");
 
   const atlas = page.getByRole("figure", { name: /Interactive full-stack product architecture/ });
-  const backend = atlas.getByRole("button", { name: "Inspect the Python and Django API layer" });
+  const backend = atlas.getByRole("button", { name: "Inspect the application services layer" });
 
   await backend.hover();
   await expect(atlas).toHaveAttribute("data-active", "backend");
@@ -113,7 +113,7 @@ test("mobile atlas cards stay visible without horizontal overflow", async ({ pag
   const atlas = page.getByRole("figure", { name: /Interactive full-stack product architecture/ });
   const branches = [
     "Inspect the product interface layer",
-    "Inspect the Python and Django API layer",
+    "Inspect the application services layer",
     "Inspect the domain logic layer",
     "Inspect the data systems layer",
     "Inspect the delivery layer",

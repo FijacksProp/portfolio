@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Joshua Olugbemi — Portfolio",
     short_name: "Joshua Olugbemi",
-    description: "Full-stack software engineer building web products with Python, Django, React, TypeScript, and PostgreSQL.",
+    description: "Full-stack software engineer building dependable products across interfaces, backend services, data, mobile workflows, and delivery.",
     start_url: "/",
     display: "standalone",
     background_color: "#F4F1EA",
