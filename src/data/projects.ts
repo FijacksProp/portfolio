@@ -40,12 +40,12 @@ export const projects: Project[] = [
     slug: "smart-attendance-system",
     title: "Smart Attendance System",
     year: "2026",
-    role: "Product engineer · Final-year project",
+    role: "Full-stack product engineer · Final-year project",
     status: "academic",
-    eyebrow: "Proximity verification / Mobile + backend",
-    cta: "Trace the verification architecture",
+    eyebrow: "Django REST platform / Flutter + Android",
+    cta: "Explore the full-stack architecture",
     summary:
-      "A working attendance prototype that combines BLE, acoustic beaconing, device trust, and backend validation to verify classroom presence.",
+      "A Django REST and Flutter attendance platform coordinating session workflows, device-aware proof, server-side trust rules, reporting, and CSV export.",
     premise:
       "Attendance proof should be layered, short-lived, and validated by the server—not trusted simply because a phone says it was present.",
     context: [

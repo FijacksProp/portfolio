@@ -11,6 +11,8 @@ export function SitePreloader() {
 
   const finish = useCallback(() => {
     document.documentElement.removeAttribute("data-preloading");
+    document.documentElement.setAttribute("data-portfolio-ready", "true");
+    window.dispatchEvent(new Event("portfolio:ready"));
     setVisible(false);
   }, []);
 

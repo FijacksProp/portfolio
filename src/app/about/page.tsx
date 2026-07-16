@@ -6,7 +6,7 @@ import { capabilities, siteConfig, timeline } from "@/data/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Joshua Olugbemi is a full-stack software engineer and web development instructor with a Telecommunication Science background.",
+    "Joshua Olugbemi is a Python and Django-focused full-stack software engineer, React developer, and web development instructor.",
   alternates: { canonical: "/about" },
 };
 
@@ -17,25 +17,26 @@ export default function AboutPage() {
         <div className="page-kicker folio-label">About / Working method</div>
         <Reveal className="about-thesis">
           <h1>
-            Signals taught me to think in <em>constraints.</em>
+            I build both sides of the <em>request.</em>
           </h1>
         </Reveal>
         <Reveal className="about-intro" delay={0.05}>
           <p>
-            I’m Joshua, a full-stack software engineer working across product interfaces,
-            APIs, data, and deployment. My Telecommunication Science background shapes how
-            I approach identity, proximity, device behavior, and systems that meet physical constraints.
+            I’m Joshua, a full-stack software engineer focused on Python and Django backend
+            systems and polished React and Next.js interfaces. I design API contracts,
+            authentication, business rules, relational data, and the product experiences built on them.
           </p>
           <p>
-            Since 2021, I’ve owned delivery across client platforms, product prototypes,
-            dashboards, APIs, and academic systems using Django, React, TypeScript, and PostgreSQL.
-            Teaching web development since 2024 has sharpened how I communicate architecture
-            and make systems legible to other engineers.
+            My Telecommunication Science background gives me an additional systems perspective
+            when software meets identity, proximity, devices, or physical constraints. Since 2021,
+            I’ve owned delivery across client platforms, product prototypes, dashboards, APIs,
+            and academic systems. Teaching web development since 2024 has sharpened how I
+            communicate architecture and make systems legible to other engineers.
           </p>
         </Reveal>
         <blockquote className="about-quote">
-          My method: identify the constraint, define the trust boundary, then design the
-          interface and system around both.
+          My method: model the product rule clearly, encode it in the backend, then carry
+          it through the interface, data, and release.
         </blockquote>
       </header>
 

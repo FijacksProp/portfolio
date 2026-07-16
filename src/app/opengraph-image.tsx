@@ -26,10 +26,10 @@ export default function OpenGraphImage() {
           <span>Full-stack software engineer / Nigeria</span>
         </div>
         <div style={{ display: "flex", maxWidth: 1060, fontSize: 76, lineHeight: 0.98, letterSpacing: "-0.045em", fontWeight: 600 }}>
-          I design and ship full-stack systems across interfaces, APIs, and real-world signals.
+          I build dependable full-stack products with Python, Django, React, and PostgreSQL.
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", paddingTop: 22, borderTop: "2px solid #101820", fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase" }}>
-          <span>Interface → API → Data → Signal</span>
+          <span>Python → Django → React → PostgreSQL</span>
           <span>FP / 2026</span>
         </div>
       </div>

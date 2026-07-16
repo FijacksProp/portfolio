@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 };
 
 const engineeringIndex = [
-  { number: "01", label: "Product interfaces", tools: "React / Next.js / Flutter" },
-  { number: "02", label: "Services + APIs", tools: "Django / DRF / FastAPI" },
+  { number: "01", label: "Python backend systems", tools: "Django / DRF / FastAPI" },
+  { number: "02", label: "Product interfaces", tools: "React / Next.js / TypeScript" },
   { number: "03", label: "Data + delivery", tools: "PostgreSQL / Git / Cloud" },
-  { number: "04", label: "Devices + signals", tools: "Kotlin / BLE / Acoustic" },
+  { number: "04", label: "Device-aware software", tools: "Flutter / Kotlin / BLE" },
 ] as const;
 
 export default function HomePage() {
@@ -24,19 +24,20 @@ export default function HomePage() {
       <section className="home-hero home-hero-v2 page-shell">
         <div className="hero-grid-glow" aria-hidden="true" />
         <div className="hero-folio folio-label">
-          <span>Software engineering / Product · Platform · Systems</span>
+          <span>Full-stack engineering / Python · Product · Delivery</span>
           <span>Nigeria / UTC+1</span>
         </div>
         <Reveal className="hero-statement">
           <h1>
             <span>I design &amp; ship</span>
-            <span>full-stack systems:</span>
-            <span>interface, API,</span>
-            <span>&amp; real-world <em>signals.</em></span>
+            <span>full-stack products:</span>
+            <span>Python, Django,</span>
+            <span>&amp; thoughtful <em>interfaces.</em></span>
           </h1>
           <p>
-            I work from product decisions through backend rules and deployment, combining
-            React, Django, TypeScript, PostgreSQL, and a Telecommunication Science systems perspective.
+            I own the path from product decisions and responsive interfaces to Django APIs,
+            PostgreSQL data models, testing, and deployment. My telecommunications background
+            adds an edge when software meets devices or physical systems.
           </p>
           <div className="hero-actions">
             <ArrowLink href="/work" className="arrow-link-primary">
@@ -73,8 +74,8 @@ export default function HomePage() {
           <SectionHeading
             number="01"
             label="Selected work"
-            title="Three systems. Three different constraints."
-            description="Proximity verification, public product communication, and watch-only market analysis—shown through architecture, trade-offs, and delivered scope."
+            title="Three products. Three kinds of engineering ownership."
+            description="Backend validation, responsive product delivery, and risk-aware data tooling—shown through architecture, trade-offs, and delivered scope."
           />
         </div>
         <h2 id="featured-work-heading" className="sr-only">Featured work</h2>
@@ -87,7 +88,7 @@ export default function HomePage() {
         <SectionHeading
             number="02"
             label="Engineering range"
-            title="One practice across interface, service, data, deployment, and signal layers."
+            title="One practice across backend systems, interfaces, data, and delivery."
         />
         <div className="capability-ledger">
           {capabilities.map((capability, index) => (

@@ -5,9 +5,9 @@ export const siteConfig = {
   location: "Nigeria",
   email: "fijacksprop@gmail.com",
   description:
-    "Full-stack software engineer owning product interfaces, backend services, data, and deployment, with a Telecommunication Science background in signal-aware systems.",
+    "Full-stack software engineer building web products with Python, Django, React, TypeScript, and PostgreSQL—from API and data modelling to polished interfaces and deployment.",
   statement:
-    "I design and ship full-stack systems—from product interfaces and APIs to deployment and real-world signals.",
+    "I build dependable full-stack products with Python, Django, React, and PostgreSQL—from backend rules to the interface people use.",
   resumeUrl: "/joshua-olugbemi-resume.pdf",
   socials: {
     github: "https://github.com/FijacksProp",
@@ -38,14 +38,14 @@ export const navigation = [
 
 export const capabilities = [
   {
-    discipline: "Interfaces",
-    detail: "Responsive product surfaces with clear interaction and content structure.",
-    tools: "React · TypeScript · Next.js · Tailwind CSS",
+    discipline: "Python backend systems",
+    detail: "Django services that turn product rules into secure APIs, workflows, authentication, and validation.",
+    tools: "Python · Django · DRF · FastAPI",
   },
   {
-    discipline: "Backend",
-    detail: "Authentication, APIs, business rules, and validation that hold up beyond the UI.",
-    tools: "Python · Django · DRF · FastAPI",
+    discipline: "Product interfaces",
+    detail: "Responsive product surfaces with clear interaction, content structure, and maintainable components.",
+    tools: "React · TypeScript · Next.js · Tailwind CSS",
   },
   {
     discipline: "Data",
@@ -58,8 +58,8 @@ export const capabilities = [
     tools: "Vercel · Render · Netlify · GitHub",
   },
   {
-    discipline: "Signal systems",
-    detail: "Software that connects real-world proximity signals to verifiable outcomes.",
+    discipline: "Device-aware software",
+    detail: "Software that connects physical devices and proximity signals to verifiable product workflows.",
     tools: "BLE · Acoustic beaconing · Kotlin · Flutter",
   },
 ] as const;

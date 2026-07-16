@@ -26,8 +26,11 @@ export const metadata: Metadata = {
   keywords: [
     "Joshua Olugbemi",
     "full-stack developer",
+    "Python developer",
     "Django developer",
+    "Django REST Framework",
     "React developer",
+    "Next.js developer",
     "TypeScript",
     "Nigeria software developer",
     "Telecommunication Science",
@@ -72,7 +75,17 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       "@type": "CollegeOrUniversity",
       name: "University of Ilorin",
     },
-    knowsAbout: ["Django", "React", "TypeScript", "PostgreSQL", "BLE", "REST APIs"],
+    knowsAbout: [
+      "Python",
+      "Django",
+      "Django REST Framework",
+      "React",
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "REST APIs",
+      "Bluetooth Low Energy",
+    ],
   };
 
   return (

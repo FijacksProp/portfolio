@@ -9,7 +9,7 @@ import { archiveProjects, projects } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Selected work",
   description:
-    "Case studies spanning proximity verification, public product delivery, and risk-aware market observation.",
+    "Full-stack case studies in backend validation, responsive web delivery, and risk-aware data tooling.",
   alternates: { canonical: "/work" },
 };
 
@@ -19,10 +19,10 @@ export default function WorkPage() {
       <header className="work-hero page-shell">
         <div className="page-kicker folio-label">Work / Engineering record</div>
         <Reveal className="work-title">
-          <h1>Selected systems</h1>
+          <h1>Selected products</h1>
           <p>
-            Three systems selected for the engineering decisions they expose: proximity
-            trust, product communication, and risk-aware market analysis.
+            Three products selected for the full-stack decisions they expose: backend trust,
+            responsive product delivery, and risk-aware data analysis.
           </p>
         </Reveal>
         <div className="work-folio" aria-hidden="true">01—03</div>
